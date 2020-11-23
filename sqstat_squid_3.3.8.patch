@@ -1,0 +1,34 @@
+107c107
+< 		if($raw[0]!="HTTP/1.0 200 OK"){
+---
+> 		if($raw[0]!="HTTP/1.1 200 OK"){
+131,132c131,132
+< 					if(substr($v,0,5)=="peer:") $parsed["con"][$connection]["peer"]=substr($v,6);
+< 					if(substr($v,0,3)=="me:") $parsed["con"][$connection]["me"]=substr($v,4);
+---
+> 					if(substr($v,0,7)=="remote:") $parsed["con"][$connection]["remote"]=substr($v,8);
+> 					if(substr($v,0,6)=="local:") $parsed["con"][$connection]["local"]=substr($v,7);
+178c178
+< 			$ip=substr($v["peer"],0,strpos($v["peer"],":"));
+---
+> 			$ip=substr($v["remote"],0,strpos($v["remote"],":"));
+189c189
+< 				$ip=ip2long(substr($v["peer"],0,strpos($v["peer"],":")));
+---
+> 				$ip=ip2long(substr($v["remote"],0,strpos($v["remote"],":")));
+209c209
+< 		'Auto refresh: <input name="refresh" type="text" size="4" value="'.$refresh.'"/> sec. <input type="submit" value="Update"/> <input name="stop" type="submit" value="Stop"/> Created at: <tt>'.date("h:i:s d/m/Y").'</tt><br/>'.
+---
+> 		'Auto refresh: <input name="refresh" type="text" size="4" value="'.$refresh.'"/> sec. <input type="submit" value="Update"/> <input name="stop" type="submit" value="Stop"/> Created at: <tt>'.date("H:i:s d/m/Y").'</tt><br/>'.
+253c253
+< 							$curr_speed = ($con['bytes'] - $was_size) / 1024 / $delta;
+---
+> 							$curr_speed = ($con['bytes'] - $was_size) / 1024*8 / $delta;
+256c256
+< 						$curr_speed = $con['bytes'] / 1024;
+---
+> 						$curr_speed = $con['bytes'] / 1024*8;
+260c260
+< 					$avg_speed = $con['bytes'] / 1024;
+---
+> 					$avg_speed = $con['bytes'] / 1024*8;
