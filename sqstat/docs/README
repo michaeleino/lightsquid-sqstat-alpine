@@ -1,15 +1,18 @@
+taken ref from 
+https://github.com/visavis2k/sqstat-docker
+https://github.com/lorf/sqstat
     About SqStat
     ============
 
 SqStat is a script which allows to look through active squid users
 connections. It use cachemgr protocol to get information from squid
-proxy server. Script homepage is http://samm.kiev.ua/sqstat/. 
+proxy server. Script homepage is http://samm.kiev.ua/sqstat/.
 
 
     What's new
     ==========
 
-For a complete list of changes, see the CHANGES file. 
+For a complete list of changes, see the CHANGES file.
 
 
     System requirements
@@ -22,7 +25,7 @@ For a complete list of changes, see the CHANGES file.
 
 
     Installation
-    ============    
+    ============
 
    1. Unpack the distribution in your webserver's document root.
    2. Copy file config.inc.php.defaults to config.inc.php, edit config.inc.php
@@ -36,9 +39,9 @@ For a complete list of changes, see the CHANGES file.
       http_access deny manager
 
    4. Point your browser to sqstat.php file and see what happens :)
-   5. (optionally) enable ip resolving in config.inc.php. Also you can make 
+   5. (optionally) enable ip resolving in config.inc.php. Also you can make
       "hosts" like file with ip->name pairs.
-   
+
 
 
     Bug reports
